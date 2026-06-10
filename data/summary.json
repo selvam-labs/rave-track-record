@@ -1,0 +1,19 @@
+{
+ "as_of": "2026-06-10T11:49:44+00:00",
+ "sessions": 0,
+ "starting_cash": 1000000.0,
+ "current_nav": 1000000.0,
+ "total_return": 0.0,
+ "annualized_return": null,
+ "annualized_vol": null,
+ "sharpe": null,
+ "sharpe_ready": false,
+ "max_drawdown": 0.0,
+ "current_drawdown": 0.0,
+ "n_closed": 0,
+ "total_realized": 0,
+ "win_rate": null,
+ "avg_win": null,
+ "avg_loss": null,
+ "profit_factor": null
+}

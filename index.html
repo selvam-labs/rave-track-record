@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAVE — Live Paper Track Record</title>
+<meta name="description" content="RAVE (Raja Automated Volatility Engine) — autonomous rules-based paper trading track record, updated daily by the engine itself.">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="title-row">
+    <h1>RAVE</h1>
+    <span class="badge paper">PAPER TRADING</span>
+    <span class="badge auto">AUTONOMOUS · DAILY 10AM ET</span>
+  </div>
+  <p class="subtitle">Raja Automated Volatility Engine — a deterministic, rules-only signal engine.
+  Every number on this page is committed daily by the engine itself; the
+  <a href="https://github.com/selvam-labs/rave-track-record/commits/main" target="_blank" rel="noopener">commit history</a>
+  is the audit trail.</p>
+  <div id="headline" class="headline">loading…</div>
+</header>
+
+<main>
+  <section class="panel">
+    <h2>Equity curve</h2>
+    <div id="equity" class="chart"></div>
+    <div id="drawdown" class="chart short"></div>
+  </section>
+
+  <section id="tiles" class="tiles"></section>
+
+  <section class="panel">
+    <h2>Trade log <span id="tradecount" class="muted"></span></h2>
+    <div class="table-wrap">
+      <table id="trades">
+        <thead><tr>
+          <th>Date</th><th>Symbol</th><th>Action</th><th>Side</th>
+          <th class="num">Qty</th><th class="num">Price</th>
+          <th class="num">Realized P&amp;L</th><th>Rule</th><th class="num">VIX</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel method">
+    <h2>Methodology</h2>
+    <p>RAVE is a fully automated paper-trading engine: a locked, deterministic rule set —
+    status-timed entries, a VIX-regime position governor that caps size per volatility band,
+    a 325-session trend gate, hard stop-losses, and a portfolio drawdown circuit breaker.
+    No discretion, no manual overrides, no ML. It runs unattended on AWS Lambda every
+    trading day at 10:00 AM ET against an Alpaca paper account and commits its results here.</p>
+    <p class="muted">Sharpe and annualized statistics are hidden until 20 sessions exist —
+    they are noise before that. Nothing on this page is investment advice.</p>
+  </section>
+</main>
+
+<footer>
+  <span id="asof"></span> · built by <a href="https://github.com/selvam-labs" target="_blank" rel="noopener">selvam-labs</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
