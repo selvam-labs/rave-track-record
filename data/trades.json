@@ -1,1 +1,38 @@
-[]
+[
+ {
+  "date": "2026-06-10",
+  "symbol": "AAPL",
+  "action": "open",
+  "side": "buy",
+  "qty": 69.0,
+  "price": 289.71,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 20.219999313354492,
+  "tier": "Elevated"
+ },
+ {
+  "date": "2026-06-10",
+  "symbol": "XTL",
+  "action": "open",
+  "side": "buy",
+  "qty": 45.0,
+  "price": 224.2,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 20.219999313354492,
+  "tier": "Elevated"
+ },
+ {
+  "date": "2026-06-10",
+  "symbol": "QQQ",
+  "action": "open",
+  "side": "buy",
+  "qty": 14.0,
+  "price": 706.29,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 20.219999313354492,
+  "tier": "Elevated"
+ }
+]
