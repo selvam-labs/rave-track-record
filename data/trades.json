@@ -1,5 +1,41 @@
 [
  {
+  "date": "2026-06-11",
+  "symbol": "EWJ",
+  "action": "open",
+  "side": "buy",
+  "qty": 110.0,
+  "price": 90.49,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 21.510000228881836,
+  "tier": "Elevated"
+ },
+ {
+  "date": "2026-06-11",
+  "symbol": "QQQ",
+  "action": "add",
+  "side": "buy",
+  "qty": 14.0,
+  "price": 704.15,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 21.510000228881836,
+  "tier": "Elevated"
+ },
+ {
+  "date": "2026-06-11",
+  "symbol": "SPY",
+  "action": "open",
+  "side": "buy",
+  "qty": 13.0,
+  "price": 730.27,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 21.510000228881836,
+  "tier": "Elevated"
+ },
+ {
   "date": "2026-06-10",
   "symbol": "AAPL",
   "action": "open",
