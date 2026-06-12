@@ -18,7 +18,7 @@ structure, reasoning, and decisions are unedited engine output.
 
 ---
 
-## Universe changes (32 instruments in today's signal file)
+## Universe changes (32 instruments parsed from today's signal email)
 
 **Dropped from today's universe (not held):** ███, ███
 
@@ -41,7 +41,7 @@ structure, reasoning, and decisions are unedited engine output.
 
 ---
 
-## Full signal table (33 instruments — 8 of 33 rows shown)
+## Full signal table (33 decision rows — 8 shown)
 
 | Signal | Status | Trend | Action | Instrument | Type | Size | Reason |
 |--------|--------|-------|--------|------------|------|------|--------|
@@ -54,7 +54,10 @@ structure, reasoning, and decisions are unedited engine output.
 | ██████ | ████████ | neutral | hold | ███ | etf | — | status: no action |
 | ██████ | ████████ | bull | hold | ███ | etf | — | status: no action |
 
-*… 25 more rows withheld (same shape: signal, status, trend, decision, reason).*
+*… 25 more rows withheld (same shape: signal, status, trend, decision, reason).
+The engine emits one decision row per instrument it evaluated that session, so
+the row count can differ from the day's email universe by a held or remapped
+instrument.*
 
 > *Every instrument gets a decision every day, most of them "hold" with the rule
 > that produced it. The Trend column is the engine's own 325-session SMA
