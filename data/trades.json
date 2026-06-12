@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-06-12",
+  "symbol": "XTL",
+  "action": "exit",
+  "side": "sell",
+  "qty": 45.0,
+  "price": 231.42,
+  "realized_pnl": 324.9,
+  "rule": "universe exit",
+  "vix": 18.440000534057617,
+  "tier": null
+ },
+ {
   "date": "2026-06-11",
   "symbol": "EWJ",
   "action": "open",
