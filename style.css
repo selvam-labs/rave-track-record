@@ -34,6 +34,9 @@ h2 { margin: 0 0 12px; font-size: 16px; color: var(--muted); text-transform: upp
 }
 .badge.paper { color: #d29922; border-color: #d29922; }
 .badge.auto  { color: var(--accent); border-color: var(--accent); }
+.badge.fresh       { color: var(--muted); }
+.badge.fresh.ok    { color: var(--green); border-color: var(--green); }
+.badge.fresh.stale { color: var(--red); border-color: var(--red); }
 
 .subtitle { color: var(--muted); margin: 8px 0 16px; max-width: 760px; }
 

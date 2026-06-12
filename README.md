@@ -95,6 +95,10 @@ The same buy signal that builds a full position at VIX 15 is capped at a 1% floo
 at VIX 28. **VIX caps, status times.** Builds scale in via fixed 25% tranches —
 never a full position on one print. The interleaved *freeze* bands act as
 hysteresis: the book doesn't churn when the VIX oscillates around a boundary.
+The [22, 27) band freezes rather than trims for the same reason — mid-stress
+chop is where forced de-risking whipsaws a book, so actual trimming is reserved
+for the ≥ 27 stress bands, and the freeze damps re-leveraging on the way back
+down.
 
 ### 3.3 Filters
 
@@ -140,6 +144,10 @@ The parts that took the most care are the ones that don't show up on the chart:
   metrics, and executed fills. An automated test asserts that no signal-source
   term can appear in any published file.
 
+To *feel* the system rather than read about it: a
+[redacted sample of one real daily brief](docs/sample-brief.md) — signals in,
+decisions made, orders out, reconciliation at the top — is included in this repo.
+
 ---
 
 ## 6. Track record
@@ -147,6 +155,12 @@ The parts that took the most care are the ones that don't show up on the chart:
 The [dashboard](https://selvam-labs.github.io/rave-track-record/) updates every
 trading day by bot commit. The clean record begins **June 10, 2026** on a
 $1,000,000 paper account.
+
+The record is tamper-evident by mechanism, not by promise: GitHub's push
+timestamps and event log are recorded server-side and can't be rewritten,
+`main` is protected against force-pushes and history deletion, and the
+`data/` files are written only by the engine's bot identity — human commits
+never touch them.
 
 Metrics: total and annualized return, annualized volatility, Sharpe, max and
 current drawdown, win rate, average win/loss, profit factor, realized P&L.
@@ -180,4 +194,6 @@ published. Source code is private.
 ---
 
 *A personal engineering project in deterministic systematic trading,
-volatility-based risk sizing, and cloud-native automation.*
+volatility-based risk sizing, and cloud-native automation.
+© 2026 Raja Selvam — all rights reserved ([LICENSE](LICENSE)); published for
+viewing and evaluation, not for redistribution.*

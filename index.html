@@ -1,10 +1,16 @@
 <!doctype html>
+<!-- SOURCE OF TRUTH for the public dashboard page. dashboard_export.render_index()
+     replaces the double-brace markers with ledger values each run and the publisher
+     pushes the result to rave-track-record/index.html. Headline numbers are
+     static text at commit time so they survive without JavaScript; app.js
+     hydrates charts and live formatting on top. Do NOT edit index.html in the
+     public repo by hand — edit this template. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RAVE — Live Paper Track Record</title>
-<meta name="description" content="RAVE (Raja Automated Volatility Engine) — autonomous rules-based paper trading track record, updated daily by the engine itself.">
+<meta name="description" content="RAVE (Raja Automated Volatility Engine) — autonomous rules-based paper trading track record, updated daily by the engine itself. NAV $1,000,014, total return +0.00% as of 2026-06-11.">
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js"></script>
 </head>
@@ -14,12 +20,17 @@
     <h1>RAVE</h1>
     <span class="badge paper">PAPER TRADING</span>
     <span class="badge auto">AUTONOMOUS · DAILY 10AM ET</span>
+    <span id="fresh" class="badge fresh" data-asof="2026-06-11T14:00:52+00:00">ENGINE REPORTED 2026-06-11</span>
   </div>
   <p class="subtitle">Raja Automated Volatility Engine — a deterministic, rules-only signal engine.
   Every number on this page is committed daily by the engine itself; the
   <a href="https://github.com/selvam-labs/rave-track-record/commits/main" target="_blank" rel="noopener">commit history</a>
   is the audit trail.</p>
-  <div id="headline" class="headline">loading…</div>
+  <div id="headline" class="headline">
+    <span>NAV <b>$1,000,014</b></span>
+    <span>Total return <b>+0.00%</b></span>
+    <span>Sessions <b>2</b></span>
+  </div>
 </header>
 
 <main>
@@ -58,7 +69,7 @@
 </main>
 
 <footer>
-  <span id="asof"></span> · built by <a href="https://github.com/selvam-labs" target="_blank" rel="noopener">selvam-labs</a>
+  <span id="asof">data as of 2026-06-11T14:00:52+00:00 (UTC)</span> · built by <a href="https://github.com/selvam-labs" target="_blank" rel="noopener">selvam-labs</a>
 </footer>
 
 <script src="app.js"></script>

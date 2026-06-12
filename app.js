@@ -24,6 +24,34 @@ async function load(name) {
   return res.json();
 }
 
+/* Weekdays strictly between the as-of date and today (UTC). Not holiday-aware:
+   a Monday market holiday can flag a false warning until Tuesday's 10AM run
+   clears it — acceptable next to a real failure going unnoticed. */
+function tradingDaysSince(asOfIso) {
+  const asOf = new Date(asOfIso);
+  if (isNaN(asOf)) return 0;
+  const d = new Date(Date.UTC(asOf.getUTCFullYear(), asOf.getUTCMonth(), asOf.getUTCDate()));
+  const now = new Date();
+  const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  let days = 0;
+  while (d < end) {
+    d.setUTCDate(d.getUTCDate() + 1);
+    const dow = d.getUTCDay();
+    if (dow !== 0 && dow !== 6) days++;
+  }
+  return days;
+}
+
+function renderFreshness(asOfIso) {
+  const el = $("#fresh");
+  if (!el || !asOfIso) return;
+  const date = asOfIso.slice(0, 10);
+  const stale = tradingDaysSince(asOfIso) > 1;
+  el.classList.toggle("stale", stale);
+  el.classList.toggle("ok", !stale);
+  el.textContent = stale ? `⚠ NO ENGINE REPORT SINCE ${date}` : `ENGINE REPORTED ${date}`;
+}
+
 function renderHeadline(s) {
   $("#headline").innerHTML = `
     <span>NAV <b>${fmtUsd(s.current_nav)}</b></span>
@@ -89,21 +117,25 @@ function renderTrades(trades) {
       <td>${t.date}</td><td>${t.symbol}</td><td>${t.action}</td><td>${t.side}</td>
       <td class="num">${t.qty}</td><td class="num">$${t.price.toFixed(2)}</td>
       <td class="num ${cls(t.realized_pnl)}">${t.realized_pnl ? fmtUsd(t.realized_pnl) : "—"}</td>
-      <td>${t.rule}</td><td class="num">${t.vix ?? "—"}</td>
+      <td>${t.rule}</td><td class="num">${t.vix == null ? "—" : Number(t.vix).toFixed(1)}</td>
     </tr>`)
     .join("");
 }
 
 async function main() {
+  // Baked at commit time — works even if the JSON fetch below fails.
+  renderFreshness($("#fresh")?.dataset.asof);
   try {
     const [summary, nav, trades] = await Promise.all([load("summary"), load("nav"), load("trades")]);
     renderHeadline(summary);
     renderTiles(summary);
     renderCharts(nav, summary.starting_cash);
     renderTrades(trades);
+    renderFreshness(summary.as_of);
     $("#asof").textContent = `data as of ${summary.as_of} (UTC)`;
   } catch (err) {
-    $("#headline").textContent = `failed to load data: ${err.message}`;
+    // Headline numbers are static text baked at commit time — leave them up.
+    console.error("dashboard data load failed:", err);
   }
 }
 
