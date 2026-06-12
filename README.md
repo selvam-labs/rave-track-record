@@ -22,6 +22,10 @@ honest about its own record.
 This repository is the public artifact: the live track record and this write-up.
 The source code is private.
 
+### In plain words
+
+![How RAVE works — five steps, no jargon](assets/how-it-works.svg)
+
 ---
 
 ## 1. Why build this
@@ -41,6 +45,8 @@ artifact, not investment advice (see Disclaimers).
 ---
 
 ## 2. Architecture
+
+![RAVE system architecture](assets/architecture.svg)
 
 ```
    Daily inputs                    Engine                       Outputs
