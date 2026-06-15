@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-06-15",
+  "symbol": "EWJ",
+  "action": "trim",
+  "side": "sell",
+  "qty": 3.0,
+  "price": 93.84,
+  "realized_pnl": 10.06,
+  "rule": "profit trim",
+  "vix": 16.34000015258789,
+  "tier": null
+ },
+ {
   "date": "2026-06-12",
   "symbol": "XTL",
   "action": "exit",
