@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-07-07",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 705.0,
+  "price": 28.35,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.829999923706055,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-07-07",
+  "symbol": "TMF",
+  "action": "exit",
+  "side": "sell",
+  "qty": 289.0,
+  "price": 34.09,
+  "realized_pnl": -130.05,
+  "rule": "trend exit",
+  "vix": 15.829999923706055,
+  "tier": null
+ },
+ {
   "date": "2026-07-06",
   "symbol": "UUP",
   "action": "open",
