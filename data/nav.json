@@ -110,25 +110,25 @@
  {
   "date": "2026-07-06",
   "session": 19,
-  "nav": 1015462.33,
-  "drawdown_pct": 0.0
+  "nav": 1000772.46,
+  "drawdown_pct": 0.002
  },
  {
   "date": "2026-07-07",
   "session": 20,
   "nav": 1000042.08,
-  "drawdown_pct": 0.0152
+  "drawdown_pct": 0.0027
  },
  {
   "date": "2026-07-08",
   "session": 21,
   "nav": 999606.13,
-  "drawdown_pct": 0.0156
+  "drawdown_pct": 0.0031
  },
  {
   "date": "2026-07-09",
   "session": 22,
-  "nav": 1016596.07,
-  "drawdown_pct": 0.0
+  "nav": 1000212.47,
+  "drawdown_pct": 0.0025
  }
 ]
