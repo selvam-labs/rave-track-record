@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-07-09",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 705.0,
+  "price": 28.35,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.559999465942383,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-07-09",
+  "symbol": "NAIL",
+  "action": "open",
+  "side": "buy",
+  "qty": 246.0,
+  "price": 40.81,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.559999465942383,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-07-07",
   "symbol": "UUP",
   "action": "add",
