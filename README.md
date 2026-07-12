@@ -1,4 +1,4 @@
-# RAVE — Raja Automated Volatility Engine
+# RAVE — Regime-Adaptive Volatility Engine
 
 **A deterministic, volatility-governed trading system with a public, tamper-evident track record.**
 
