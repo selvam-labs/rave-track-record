@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-07-13",
+  "symbol": "QQQ",
+  "action": "trim",
+  "side": "sell",
+  "qty": 7.0,
+  "price": 715.63,
+  "realized_pnl": 72.87,
+  "rule": "profit trim",
+  "vix": 16.200000762939453,
+  "tier": null
+ },
+ {
   "date": "2026-07-09",
   "symbol": "UUP",
   "action": "add",
