@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-07-16",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 707.0,
+  "price": 28.3,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.43000030517578,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-07-15",
   "symbol": "CURE",
   "action": "open",
