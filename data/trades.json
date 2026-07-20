@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-07-17",
+  "symbol": "UUP",
+  "action": "trim",
+  "side": "sell",
+  "qty": 1144.0,
+  "price": 28.34,
+  "realized_pnl": -16.89,
+  "rule": "vol-regime cap",
+  "vix": 19.329999923706055,
+  "tier": null
+ },
+ {
+  "date": "2026-07-17",
+  "symbol": "EWJ",
+  "action": "exit",
+  "side": "sell",
+  "qty": 212.0,
+  "price": 89.89,
+  "realized_pnl": -379.37,
+  "rule": "trend exit",
+  "vix": 19.329999923706055,
+  "tier": null
+ },
+ {
   "date": "2026-07-16",
   "symbol": "UUP",
   "action": "add",
