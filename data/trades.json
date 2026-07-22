@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-07-21",
+  "symbol": "SPXL",
+  "action": "open",
+  "side": "buy",
+  "qty": 37.0,
+  "price": 268.03,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.969999313354492,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-07-17",
   "symbol": "UUP",
   "action": "trim",
