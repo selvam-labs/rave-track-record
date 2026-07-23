@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-07-22",
+  "symbol": "NAIL",
+  "action": "exit",
+  "side": "sell",
+  "qty": 246.0,
+  "price": 40.02,
+  "realized_pnl": -194.34,
+  "rule": "universe exit",
+  "vix": 17.15999984741211,
+  "tier": null
+ },
+ {
   "date": "2026-07-21",
   "symbol": "SPXL",
   "action": "open",
