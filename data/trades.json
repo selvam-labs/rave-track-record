@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-07-24",
+  "symbol": "QQQ",
+  "action": "exit",
+  "side": "sell",
+  "qty": 21.0,
+  "price": 686.3,
+  "realized_pnl": -397.32,
+  "rule": "trend exit",
+  "vix": 18.790000915527344,
+  "tier": null
+ },
+ {
   "date": "2026-07-22",
   "symbol": "NAIL",
   "action": "exit",
