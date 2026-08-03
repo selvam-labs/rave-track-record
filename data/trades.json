@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-07-31",
+  "symbol": "BNO",
+  "action": "open",
+  "side": "buy",
+  "qty": 592.0,
+  "price": 50.5,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.389999389648438,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-07-31",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 705.0,
+  "price": 28.3,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.389999389648438,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-07-24",
   "symbol": "QQQ",
   "action": "exit",
