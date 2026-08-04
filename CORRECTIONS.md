@@ -21,8 +21,8 @@ enter leveraged instruments:
 
 | Session | Overstatement | Detail |
 |---|---|---|
-| 2026-07-06 | +$14,689.87 | TMF (289 sh) marked at TLT's price: 289 × ($85.45 − $34.62) |
-| 2026-07-09 | +$16,383.60 | Same defect on a newly entered leveraged position (instrument details appear in the trade log after the standard T+1 publication lag) |
+| 2026-07-06 | +$14,689.87 | TMF (289 sh; own close $34.62) snapshotted at its underlying TLT's higher close $85.45: 289 × ($85.45 − $34.62) |
+| 2026-07-09 | +$16,383.60 | NAIL (3x homebuilders) snapshotted at its underlying XHB's higher close instead of NAIL's own; same mechanism as the row above |
 
 **Correction (applied 2026-07-09).**
 - Both sessions' NAV re-marked using official same-day closing prices for the
