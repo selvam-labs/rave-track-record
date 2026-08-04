@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-08-03",
+  "symbol": "BNO",
+  "action": "exit",
+  "side": "sell",
+  "qty": 592.0,
+  "price": 47.49,
+  "realized_pnl": -1781.92,
+  "rule": "trend exit",
+  "vix": 16.239999771118164,
+  "tier": null
+ },
+ {
   "date": "2026-07-31",
   "symbol": "BNO",
   "action": "open",
