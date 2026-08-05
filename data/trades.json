@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-08-04",
+  "symbol": "AAPB",
+  "action": "open",
+  "side": "buy",
+  "qty": 268.0,
+  "price": 37.0,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.979999542236328,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-08-03",
   "symbol": "BNO",
   "action": "exit",
