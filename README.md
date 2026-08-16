@@ -14,10 +14,10 @@ account, and publishes its equity curve here every trading day — with no human
 the loop.
 
 One thesis drives the design: **a signal decides *what* and *when*; volatility
-decides *how much*.** Direction and timing come from a rules-based status on each
-instrument. Position size is capped by a VIX-regime governor. The engine is
-deterministic — same inputs, same orders — which makes it testable, auditable, and
-honest about its own record.
+decides *how much*.** Direction and timing come from where price sits inside each
+instrument's expected range. Position size is capped by a VIX-regime governor. The
+engine is deterministic — same inputs, same orders — which makes it testable,
+auditable, and honest about its own record.
 
 This repository is the public artifact: the live track record and this write-up.
 The source code is private.
@@ -51,10 +51,11 @@ artifact, not investment advice (see Disclaimers).
 ```
    Daily inputs                    Engine                       Outputs
 ┌────────────────────┐   ┌─────────────────────────┐   ┌─────────────────────┐
-│ range + status per │   │ status → direction/time │   │ broker paper orders │
-│   instrument       │──►│ VIX regime → size cap   │──►│ SQLite ledger + NAV │
-│ prices, VIX,       │   │ trend & breadth filters │   │ daily email brief   │
-│   breadth          │   │ risk rules              │   │ this dashboard      │
+│ range per          │   │ position in range →     │   │ broker paper orders │
+│   instrument       │──►│   direction / timing    │──►│ SQLite ledger + NAV │
+│ prices, VIX,       │   │ VIX regime → size cap   │   │ daily email brief   │
+│   breadth          │   │ trend filter, risk rules│   │ this dashboard      │
+│                    │   │ idle cash → T-bills     │   │                     │
 └────────────────────┘   └─────────────────────────┘   └─────────────────────┘
 ```
 
@@ -67,15 +68,27 @@ Signal inputs are ingested automatically each morning. No laptop involved.
 
 ## 3. Methodology
 
-### 3.1 Status as signal
+### 3.1 Position in range as signal
 
-Each instrument carries a daily status derived from a third-party risk-range
-provider: near the bottom of its expected range (buy zone), near the top
-(sell/trim zone), inside it, or broken out. That status is the primary trigger.
-RAVE doesn't predict — it reacts to where price sits in its expected band.
+Each instrument carries a daily expected range from a third-party provider. RAVE
+reads where price sits inside that range and reacts — it does not predict.
+
+**Entry:** anywhere in the **lower half** of the range, adding 25% of the
+instrument's volatility-governed target per qualifying day.
+
+**Exit:** RAVE does *not* trim into strength. It reduces only when an instrument's
+own range **low** makes consecutive lower lows — to 75% of target after three
+sessions, 50% after six, and no deeper. It cuts on structural deterioration, not
+on success.
+
+That asymmetry is deliberate and was learned the hard way: the original design
+trimmed at the top of the range, which fired about twice as often as its buy
+trigger and left the book unable to accumulate. See
+[CHANGELOG.md](CHANGELOG.md) (2026-08-15) and [BACKTEST.md](BACKTEST.md).
 
 > The range provider's proprietary values are not redistributed here. This
-> write-up covers only RAVE's own logic, built on top of a generic status.
+> write-up covers only RAVE's own logic, built on top of a generic position-in-range
+> reading.
 
 ### 3.2 The VIX-regime governor
 
@@ -92,7 +105,8 @@ in six bands.
 | ≥ 29     | 1% floor    | 1% floor     | trim only |
 
 The same buy signal that builds a full position at VIX 15 is capped at a 1% floor
-at VIX 28. **VIX caps, status times.** Builds scale in via fixed 25% tranches —
+at VIX 28. **Volatility caps, position-in-range times.** Builds scale in at 25% of
+the current band's target —
 never a full position on one print. The interleaved *freeze* bands act as
 hysteresis: the book doesn't churn when the VIX oscillates around a boundary.
 The [22, 27) band freezes rather than trims for the same reason — mid-stress
@@ -107,13 +121,26 @@ down.
 - **Breadth override** — extreme market-breadth readings can override the trend
   veto (mean-reversion at washouts and blow-offs).
 
-### 3.4 Leveraged proxies
+### 3.4 Leveraged instruments — removed 2026-08-15
 
-Long side only, calm regime only: when the volatility budget is cheapest, RAVE
-expresses conviction through a leveraged ETF instead of the plain exposure —
-QQQ→TQQQ, SPY→SPXL, SOXX→SOXL, IBIT→BITX, GDX→NUGT, XLE→ERX. Never on shorts,
-never in an elevated or stressed regime. Held proxies are marked and stopped at
-their **own** price, not the underlying's.
+RAVE used to express conviction in a calm regime through a leveraged ETF instead of
+the plain exposure. **It no longer does. The book is 1x only.**
+
+This was not a change of taste — it was forced by measurement, and the way it was
+found is worth stating. The 2026-08-15 entry-and-exit redesign was tested against a
+risk bar written down *before* the result was known: maximum drawdown ≤12%, return
+above T-bills, average exposure ≥35%. The first version kept leveraged instruments
+and **failed** — 12.3% drawdown, and no additional return at all over the previous
+version despite carrying double the exposure.
+
+Attribution isolated the cause. A wider entry trigger buys considerably more
+leveraged exposure into the same −10% stop, and a 3.3% move in an underlying is a
+10% move in a 3x instrument. The system was manufacturing stop-outs. Removing
+leveraged instruments is what produced the version that passed.
+
+Positions opened under the old rule were closed in a single migration on the cutover
+date; the realized profit and loss from that migration appears in the record. See
+[CHANGELOG.md](CHANGELOG.md) and [BACKTEST.md](BACKTEST.md).
 
 ---
 
@@ -121,7 +148,8 @@ their **own** price, not the underlying's.
 
 - **−10% hard stop** per position, on the instrument actually held.
 - **−10% portfolio drawdown circuit breaker.**
-- **Max 20 concurrent positions; no averaging down.**
+- **Max 20 concurrent positions; no averaging down.** Treasury holdings do not
+  consume a slot — cash management never crowds out a signal.
 - **Universe discipline** — an instrument that leaves the daily watchlist is
   exited that session; the engine never holds what it has no signal for. A
   parse-health gate stops a malformed input from mass-liquidating the book.
@@ -141,8 +169,10 @@ The parts that took the most care are the ones that don't show up on the chart:
 - **Graceful degradation.** One rejected order (a non-shortable asset, a data gap)
   is logged and skipped; it never aborts the rest of the book.
 - **Privacy by construction.** The publisher reads only the engine's own NAV,
-  metrics, and executed fills. An automated test asserts that no signal-source
-  term can appear in any published file.
+  metrics, and executed fills — never the signal source. Raw engine reasons are
+  mapped to neutral rule labels rather than exported. Automated tests assert that
+  no signal-source term survives in any published payload *or in any published
+  write-up*, this file included.
 
 To *feel* the system rather than read about it: a
 [redacted sample of one real daily brief](docs/sample-brief.md) — signals in,
@@ -169,9 +199,35 @@ current drawdown, win rate, average win/loss, profit factor, realized P&L.
 because a Sharpe ratio on a handful of days is noise. The gate is deliberate
 honesty, not a limitation.
 
+**Benchmark.** Return figures are measured against a control that holds the index
+at RAVE's *own average exposure*, with the remainder in T-bills — because being
+more invested raises returns by itself, and that is beta, not skill. On the
+five-year research window RAVE underperforms that control by roughly 1.5 points a
+year. It is a risk tool, not an alpha engine; the full record, including every
+rejected idea, is in [BACKTEST.md](BACKTEST.md).
+
+**Trade statistics restart at the 2026-08-15 strategy change.** Win rate, profit
+factor and average win/loss are counted from that date forward — a figure blended
+across the change describes neither system. The equity curve is continuous and the
+change date is marked on it.
+
 ---
 
 ## 7. Honest limitations
+
+**RAVE does not beat the index, and it is not designed to.** Measured against a
+control that holds the index at RAVE's *own average exposure*, it underperforms by
+roughly 1.5 points a year. Five years of research did not produce a version that
+beat that control — 13 position-management configurations, three volatility-timing
+schemes, a breakout system and a reversal signal all failed. What RAVE delivers is
+participation with a bounded drawdown (11.3% maximum against the index's 24.5% over
+the same window) and deterministic, unattended execution. The complete research
+record, including every rejected idea, is in [BACKTEST.md](BACKTEST.md).
+
+**The test window is one market cycle, and mostly a rising one.** It contains a
+single sustained bear market and excludes the 2020 crash entirely. That makes the
+drawdown claim — the headline — the *least* proven thing here: this system has never
+been tested through a fast, gapping crash.
 
 - The live record is young; annualized statistics are gated until they mean something.
 - The breadth feed currently defaults off when unavailable, so breadth overrides
@@ -180,6 +236,13 @@ honesty, not a limitation.
   volatility sizing are today's concentration guards.
 - Paper only. Real capital would demand slippage modeling, borrow handling, and
   tax-lot accounting — out of scope for the public track-record goal.
+- The strategy changed on 2026-08-15. Statistics quoted across that date blend two
+  different systems; trade statistics are counted from the change forward.
+- Uninvested cash is held in short-term Treasury bills. Roughly half the account
+  sits there by design, so that yield is a material part of the return. Treasury
+  holdings are excluded from win rate and profit factor — those measure the
+  signal's decisions, not where idle money waits — but their yield does count in
+  account value and every risk statistic.
 
 ---
 
