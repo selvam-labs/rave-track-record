@@ -1,5 +1,65 @@
 [
  {
+  "date": "2026-08-18",
+  "symbol": "AMZN",
+  "action": "add",
+  "side": "buy",
+  "qty": 96.0,
+  "price": 258.55,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.729999542236328,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-18",
+  "symbol": "MSFT",
+  "action": "add",
+  "side": "buy",
+  "qty": 51.0,
+  "price": 480.58,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.729999542236328,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-18",
+  "symbol": "CPER",
+  "action": "open",
+  "side": "buy",
+  "qty": 504.0,
+  "price": 39.64,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.729999542236328,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-18",
+  "symbol": "XLV",
+  "action": "add",
+  "side": "buy",
+  "qty": 117.0,
+  "price": 169.81,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.729999542236328,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-18",
+  "symbol": "SPY",
+  "action": "add",
+  "side": "buy",
+  "qty": 25.0,
+  "price": 768.54,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.729999542236328,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-08-17",
   "symbol": "AMZN",
   "action": "open",
