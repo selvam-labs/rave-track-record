@@ -78,6 +78,11 @@ is held). **The realized profit and loss from that migration counts in the trade
 appears in the equity curve** — it is a real consequence of positions the system chose to open,
 and excluding it would flatter the record.
 
+> **Partially superseded 2026-08-24.** The migration's P&L remains in the equity curve and in
+> total realized P&L, but it is now excluded from win rate and profit factor: those fills closed
+> positions the *previous* rules opened. The correction removes a gain, not a loss — see
+> [CORRECTIONS.md](CORRECTIONS.md).
+
 **Track record continuity.** The published equity curve is **not** restarted. Sessions before
 and after this date ran different logic, and the change date is marked on the dashboard. Any
 statistic quoted across the boundary is a blend of two systems and is labelled as such. Trade
