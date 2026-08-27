@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-08-26",
+  "symbol": "EWJ",
+  "action": "add",
+  "side": "buy",
+  "qty": 209.0,
+  "price": 95.76,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.510000228881836,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-08-25",
   "symbol": "MSFT",
   "action": "add",
