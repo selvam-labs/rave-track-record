@@ -1,5 +1,65 @@
 [
  {
+  "date": "2026-08-27",
+  "symbol": "AMZN",
+  "action": "add",
+  "side": "buy",
+  "qty": 6.0,
+  "price": 256.92,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.890000343322754,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-27",
+  "symbol": "CPER",
+  "action": "add",
+  "side": "buy",
+  "qty": 30.0,
+  "price": 39.91,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.890000343322754,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-27",
+  "symbol": "EWJ",
+  "action": "add",
+  "side": "buy",
+  "qty": 210.0,
+  "price": 95.51,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.890000343322754,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-27",
+  "symbol": "IWM",
+  "action": "add",
+  "side": "buy",
+  "qty": 1.0,
+  "price": 298.53,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.890000343322754,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-27",
+  "symbol": "QQQ",
+  "action": "add",
+  "side": "buy",
+  "qty": 1.0,
+  "price": 716.59,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.890000343322754,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-08-26",
   "symbol": "EWJ",
   "action": "add",
