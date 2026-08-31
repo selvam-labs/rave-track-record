@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-08-28",
+  "symbol": "EWJ",
+  "action": "add",
+  "side": "buy",
+  "qty": 207.0,
+  "price": 96.93,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.5600004196167,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-28",
+  "symbol": "XLV",
+  "action": "add",
+  "side": "buy",
+  "qty": 118.0,
+  "price": 171.17,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.5600004196167,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-08-27",
   "symbol": "AMZN",
   "action": "add",
