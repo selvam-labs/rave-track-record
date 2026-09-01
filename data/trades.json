@@ -1,5 +1,53 @@
 [
  {
+  "date": "2026-08-31",
+  "symbol": "GLD",
+  "action": "open",
+  "side": "buy",
+  "qty": 49.0,
+  "price": 405.33,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.420000076293945,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-31",
+  "symbol": "BNO",
+  "action": "open",
+  "side": "buy",
+  "qty": 378.0,
+  "price": 53.13,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.420000076293945,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-31",
+  "symbol": "XLV",
+  "action": "add",
+  "side": "buy",
+  "qty": 118.0,
+  "price": 169.95,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.420000076293945,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-08-31",
+  "symbol": "IWM",
+  "action": "add",
+  "side": "buy",
+  "qty": 5.0,
+  "price": 293.57,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.420000076293945,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-08-28",
   "symbol": "EWJ",
   "action": "add",
