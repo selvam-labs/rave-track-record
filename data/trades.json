@@ -1,5 +1,53 @@
 [
  {
+  "date": "2026-09-01",
+  "symbol": "SLV",
+  "action": "open",
+  "side": "buy",
+  "qty": 340.0,
+  "price": 58.49,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.850000381469727,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-01",
+  "symbol": "GLD",
+  "action": "add",
+  "side": "buy",
+  "qty": 49.0,
+  "price": 400.04,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.850000381469727,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-01",
+  "symbol": "BNO",
+  "action": "add",
+  "side": "buy",
+  "qty": 368.0,
+  "price": 54.03,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.850000381469727,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-01",
+  "symbol": "EWG",
+  "action": "add",
+  "side": "buy",
+  "qty": 8.0,
+  "price": 43.83,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.850000381469727,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-08-31",
   "symbol": "GLD",
   "action": "open",
