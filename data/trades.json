@@ -1,5 +1,65 @@
 [
  {
+  "date": "2026-09-03",
+  "symbol": "GLD",
+  "action": "add",
+  "side": "buy",
+  "qty": 49.0,
+  "price": 409.36,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.949999809265137,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-03",
+  "symbol": "EWG",
+  "action": "trim",
+  "side": "sell",
+  "qty": 459.0,
+  "price": 43.83,
+  "realized_pnl": -90.93,
+  "rule": "structural trim",
+  "vix": 14.949999809265137,
+  "tier": null
+ },
+ {
+  "date": "2026-09-03",
+  "symbol": "IWM",
+  "action": "add",
+  "side": "buy",
+  "qty": 68.0,
+  "price": 294.23,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.949999809265137,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-03",
+  "symbol": "SPY",
+  "action": "add",
+  "side": "buy",
+  "qty": 1.0,
+  "price": 768.6,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.949999809265137,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-03",
+  "symbol": "HYG",
+  "action": "add",
+  "side": "buy",
+  "qty": 255.0,
+  "price": 79.26,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.949999809265137,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-02",
   "symbol": "NVDA",
   "action": "trim",
