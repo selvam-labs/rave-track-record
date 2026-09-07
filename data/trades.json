@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-09-04",
+  "symbol": "EWG",
+  "action": "add",
+  "side": "buy",
+  "qty": 453.0,
+  "price": 43.97,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.119999885559082,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-04",
+  "symbol": "HYG",
+  "action": "add",
+  "side": "buy",
+  "qty": 12.0,
+  "price": 79.22,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.119999885559082,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-03",
   "symbol": "GLD",
   "action": "add",
