@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-09-07",
+  "symbol": "EWG",
+  "action": "add",
+  "side": "buy",
+  "qty": 4.0,
+  "price": 43.89,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.109999656677246,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-04",
   "symbol": "EWG",
   "action": "add",
