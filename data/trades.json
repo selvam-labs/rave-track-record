@@ -1,5 +1,41 @@
 [
  {
+  "date": "2026-09-09",
+  "symbol": "AAPL",
+  "action": "add",
+  "side": "buy",
+  "qty": 78.0,
+  "price": 317.58,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.139999389648438,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-09",
+  "symbol": "EWG",
+  "action": "add",
+  "side": "buy",
+  "qty": 15.0,
+  "price": 43.19,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.139999389648438,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-09",
+  "symbol": "XLV",
+  "action": "add",
+  "side": "buy",
+  "qty": 3.0,
+  "price": 166.68,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.139999389648438,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-08",
   "symbol": "AAPL",
   "action": "open",
