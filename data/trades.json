@@ -1,5 +1,77 @@
 [
  {
+  "date": "2026-09-10",
+  "symbol": "NVDA",
+  "action": "add",
+  "side": "buy",
+  "qty": 113.0,
+  "price": 217.93,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.700000762939453,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-10",
+  "symbol": "AMZN",
+  "action": "exit",
+  "side": "sell",
+  "qty": 392.0,
+  "price": 251.56,
+  "realized_pnl": -3556.33,
+  "rule": "trend exit",
+  "vix": 17.700000762939453,
+  "tier": null
+ },
+ {
+  "date": "2026-09-10",
+  "symbol": "AAPL",
+  "action": "add",
+  "side": "buy",
+  "qty": 77.0,
+  "price": 318.97,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.700000762939453,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-10",
+  "symbol": "XLV",
+  "action": "trim",
+  "side": "sell",
+  "qty": 123.0,
+  "price": 166.47,
+  "realized_pnl": -370.34,
+  "rule": "structural trim",
+  "vix": 17.700000762939453,
+  "tier": null
+ },
+ {
+  "date": "2026-09-10",
+  "symbol": "IWM",
+  "action": "exit",
+  "side": "sell",
+  "qty": 273.0,
+  "price": 288.14,
+  "realized_pnl": -2777.31,
+  "rule": "trend exit",
+  "vix": 17.700000762939453,
+  "tier": null
+ },
+ {
+  "date": "2026-09-10",
+  "symbol": "SPY",
+  "action": "trim",
+  "side": "sell",
+  "qty": 26.0,
+  "price": 757.06,
+  "realized_pnl": -157.75,
+  "rule": "structural trim",
+  "vix": 17.700000762939453,
+  "tier": null
+ },
+ {
   "date": "2026-09-09",
   "symbol": "AAPL",
   "action": "add",
