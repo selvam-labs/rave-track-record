@@ -1,5 +1,65 @@
 [
  {
+  "date": "2026-09-11",
+  "symbol": "SLV",
+  "action": "exit",
+  "side": "sell",
+  "qty": 340.0,
+  "price": 58.58,
+  "realized_pnl": 30.6,
+  "rule": "trend exit",
+  "vix": 15.979999542236328,
+  "tier": null
+ },
+ {
+  "date": "2026-09-11",
+  "symbol": "CPER",
+  "action": "add",
+  "side": "buy",
+  "qty": 509.0,
+  "price": 39.28,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.979999542236328,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-11",
+  "symbol": "XLV",
+  "action": "add",
+  "side": "buy",
+  "qty": 120.0,
+  "price": 166.25,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.979999542236328,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-11",
+  "symbol": "SPY",
+  "action": "add",
+  "side": "buy",
+  "qty": 25.0,
+  "price": 765.76,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.979999542236328,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-11",
+  "symbol": "HYG",
+  "action": "exit",
+  "side": "sell",
+  "qty": 1020.0,
+  "price": 78.83,
+  "realized_pnl": -603.31,
+  "rule": "trend exit",
+  "vix": 15.979999542236328,
+  "tier": null
+ },
+ {
   "date": "2026-09-10",
   "symbol": "NVDA",
   "action": "add",
