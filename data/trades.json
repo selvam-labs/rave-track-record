@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-09-14",
+  "symbol": "EWG",
+  "action": "exit",
+  "side": "sell",
+  "qty": 1856.0,
+  "price": 42.54,
+  "realized_pnl": -2722.48,
+  "rule": "trend exit",
+  "vix": 17.420000076293945,
+  "tier": null
+ },
+ {
+  "date": "2026-09-14",
+  "symbol": "XLV",
+  "action": "trim",
+  "side": "sell",
+  "qty": 122.0,
+  "price": 167.33,
+  "realized_pnl": -163.46,
+  "rule": "structural trim",
+  "vix": 17.420000076293945,
+  "tier": null
+ },
+ {
   "date": "2026-09-11",
   "symbol": "SLV",
   "action": "exit",
