@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-09-15",
+  "symbol": "CPER",
+  "action": "exit",
+  "side": "sell",
+  "qty": 2023.0,
+  "price": 38.54,
+  "realized_pnl": -1834.67,
+  "rule": "trend exit",
+  "vix": 16.90999984741211,
+  "tier": null
+ },
+ {
+  "date": "2026-09-15",
+  "symbol": "XLV",
+  "action": "add",
+  "side": "buy",
+  "qty": 119.0,
+  "price": 166.73,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.90999984741211,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-14",
   "symbol": "EWG",
   "action": "exit",
