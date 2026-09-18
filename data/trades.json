@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-09-17",
+  "symbol": "BNO",
+  "action": "add",
+  "side": "buy",
+  "qty": 330.0,
+  "price": 60.42,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.770000457763672,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-15",
   "symbol": "CPER",
   "action": "exit",
