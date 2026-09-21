@@ -436,5 +436,11 @@
   "session": 73,
   "nav": 998701.76,
   "drawdown_pct": 0.0149
+ },
+ {
+  "date": "2026-09-21",
+  "session": 74,
+  "nav": 1000445.2,
+  "drawdown_pct": 0.0132
  }
 ]

@@ -1,5 +1,41 @@
 [
  {
+  "date": "2026-09-18",
+  "symbol": "NVDA",
+  "action": "add",
+  "side": "buy",
+  "qty": 2.0,
+  "price": 219.49,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.25,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-18",
+  "symbol": "BNO",
+  "action": "add",
+  "side": "buy",
+  "qty": 227.0,
+  "price": 61.33,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.25,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-18",
+  "symbol": "USO",
+  "action": "open",
+  "side": "buy",
+  "qty": 127.0,
+  "price": 157.12,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.25,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-17",
   "symbol": "BNO",
   "action": "add",
