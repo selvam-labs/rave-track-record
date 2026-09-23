@@ -1,5 +1,41 @@
 [
  {
+  "date": "2026-09-22",
+  "symbol": "BNO",
+  "action": "add",
+  "side": "buy",
+  "qty": 24.0,
+  "price": 58.26,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.720000267028809,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-22",
+  "symbol": "USO",
+  "action": "add",
+  "side": "buy",
+  "qty": 137.0,
+  "price": 145.75,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.720000267028809,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-22",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 704.0,
+  "price": 28.47,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 14.720000267028809,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-21",
   "symbol": "BNO",
   "action": "add",
