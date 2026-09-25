@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-09-24",
+  "symbol": "GLD",
+  "action": "exit",
+  "side": "sell",
+  "qty": 199.0,
+  "price": 390.99,
+  "realized_pnl": -2601.9,
+  "rule": "trend exit",
+  "vix": 15.729999542236328,
+  "tier": null
+ },
+ {
   "date": "2026-09-23",
   "symbol": "USO",
   "action": "add",
