@@ -150,6 +150,10 @@ date; the realized profit and loss from that migration appears in the record. Se
 - **−10% portfolio drawdown circuit breaker.**
 - **Max 20 concurrent positions; no averaging down.** Treasury holdings do not
   consume a slot — cash management never crowds out a signal.
+- **No borrowing.** A purchase may only spend settled cash plus liquidatable
+  Treasury bills; orders size down to what is affordable and are skipped when
+  nothing is. Added 2026-09-26 after the backtest was found to have used margin
+  that was never intended or disclosed — see [CORRECTIONS.md](CORRECTIONS.md).
 - **Universe discipline** — an instrument that leaves the daily watchlist is
   exited that session; the engine never holds what it has no signal for. A
   parse-health gate stops a malformed input from mass-liquidating the book.
@@ -202,7 +206,7 @@ honesty, not a limitation.
 **Benchmark.** Return figures are measured against a control that holds the index
 at RAVE's *own average exposure*, with the remainder in T-bills — because being
 more invested raises returns by itself, and that is beta, not skill. On the
-five-year research window RAVE underperforms that control by roughly 1.5 points a
+five-year research window RAVE underperforms that control by roughly 2.8 points a
 year. It is a risk tool, not an alpha engine; the full record, including every
 rejected idea, is in [BACKTEST.md](BACKTEST.md).
 
@@ -217,10 +221,10 @@ change date is marked on it.
 
 **RAVE does not beat the index, and it is not designed to.** Measured against a
 control that holds the index at RAVE's *own average exposure*, it underperforms by
-roughly 1.5 points a year. Five years of research did not produce a version that
+roughly 2.8 points a year. Five years of research did not produce a version that
 beat that control — 13 position-management configurations, three volatility-timing
 schemes, a breakout system and a reversal signal all failed. What RAVE delivers is
-participation with a bounded drawdown (11.3% maximum against the index's 24.5% over
+participation with a bounded drawdown (9.0% maximum against the index's 24.5% over
 the same window) and deterministic, unattended execution. The complete research
 record, including every rejected idea, is in [BACKTEST.md](BACKTEST.md).
 

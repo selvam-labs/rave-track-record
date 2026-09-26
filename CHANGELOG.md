@@ -48,6 +48,11 @@ returned 3.3% a year — while taking drawdowns that cash does not.
 | Sharpe | 0.74 | **0.82** |
 | maximum drawdown | 6.1% | **11.3%** |
 
+> **Superseded 2026-09-26.** These figures were produced by a backtest that borrowed money on
+> 18% of sessions and was never charged for it. Corrected, without borrowing: return **5.9%**,
+> Sharpe **0.75**, maximum drawdown **9.0%**, average exposure **51%**. See
+> [CORRECTIONS.md](CORRECTIONS.md).
+
 **The system now takes visibly more risk than it did.** That is the deliberate trade, and the
 drawdown figure is published beside the return, not beneath it.
 
@@ -65,7 +70,7 @@ remain reproducible in the research code.
 
 **What this change does NOT claim.** It does not produce alpha. Measured against a control
 that simply holds the index at the *same average exposure*, this version still underperforms
-by about **1.5 points a year**. That is the smallest gap the project has recorded, and it is
+by about **2.8 points a year** (originally stated as 1.5 — see the 2026-09-26 correction). It is
 still a gap. The change makes the system better at what it is actually good at — staying
 invested with a bounded drawdown — and does not make it a market-beating strategy. The full
 research record, including every rejected idea, is in [BACKTEST.md](BACKTEST.md).

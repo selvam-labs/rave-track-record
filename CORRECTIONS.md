@@ -6,6 +6,65 @@ history — that history is the audit trail, so nothing is ever silently rewritt
 
 ---
 
+## 2026-09-26 — the published backtest used leverage that was never intended, priced, or disclosed
+
+**Defect.** Nothing in this system ever checked whether a purchase was affordable. Not the
+signal engine, not the position sizer, not the ledger. Orders were sent, the brokerage account
+extended margin, and the cash balance simply went negative.
+
+The result: **the backtest behind every published v0.7 figure borrowed money.** It ran with a
+negative cash balance on **203 of 1,131 sessions — 18% of the run** — reaching **61% of account
+value borrowed** at the extreme. That is where its peak gross exposure of 162% came from.
+
+Worse, the simulation never charged for it. Interest was credited when cash was positive and
+nothing was deducted when it was negative, so the borrowing was free.
+
+This was not a decision anyone made. It was the absence of a check, and it went unnoticed
+because the account happened to hold enough Treasury bills to fund purchases without visibly
+borrowing.
+
+**Why it matters beyond the numbers.** The 2026-08-15 entry describes retiring leveraged
+instruments, and the README describes a 1x book. Both were true about *instruments* and silent
+about *borrowing*. A reader would reasonably have concluded this system does not use leverage.
+Over the window in question, it did.
+
+**Impact on published numbers.** Corrected to forbid borrowing entirely:
+
+| | as published | corrected |
+|---|---|---|
+| annualised return | 7.5% | **5.9%** |
+| Sharpe | 0.82 | **0.75** |
+| maximum drawdown | 11.3% | **9.0%** |
+| average exposure | 54% | **51%** |
+| gap vs. holding the index at matched exposure | −1.5 pts | **−2.8 pts** |
+
+**About 1.6 points of the published annual return was borrowed money, not strategy.** The gap
+against the benchmark roughly doubles, because the benchmark was never leveraged and so the
+comparison had never been like-for-like.
+
+The drawdown figure moves the other way: **9.0% rather than 11.3%**, because leverage was
+adding risk, not controlling it. The corrected version is both less profitable and safer, which
+is the honest shape of the trade-off.
+
+**Fix.** A no-borrowing rail now caps every purchase at cash plus liquidatable Treasury bills,
+sizing an order down to what is actually affordable and skipping it when nothing is. The
+backtest enforces the identical constraint, so simulated and live behaviour match. Purchases
+execute before the daily bill sale that funds them, so the cash balance can dip negative
+briefly within a session — that is settlement timing, not leverage, and the system now checks
+the balance after the sale and raises an alert if it is still negative.
+
+**Current state.** The live account holds no borrowed money: cash is positive at roughly
+$20,000 against $1.01M in account value, with the book about 98% invested. It reached that
+level by filling every position to its limit and stopping — not because any rule prevented it
+from going further. Had more signals fired, it would have borrowed.
+
+**How this was found.** A routine question about why a position was sized at 10% rather than 8%
+led to checking the account's margin settings. The account reports a 4x day-trading multiplier
+and $2.8M of buying power on a $1M balance — it was never a cash account, and no part of the
+system had ever asked.
+
+---
+
 ## 2026-08-26 — Sharpe was computed against a 0% risk-free rate (published +1.44; actual −1.59)
 
 **Defect.** The Sharpe ratio published on the dashboard used a risk-free rate of **zero**.

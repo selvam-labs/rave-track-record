@@ -93,11 +93,11 @@ This is the centrepiece. Ideas tested and rejected on evidence:
 
 Two things, and neither is an edge:
 
-**Participation.** Fixing the accumulation defect took average exposure from 18% to 54% and
-annual return from 3.3% to 7.5%. But the null rose too. The remaining gap is **−1.5 points a
+**Participation.** Fixing the accumulation defect took average exposure from 18% to 51% and
+annual return from 3.3% to 5.9%. But the null rose too. The remaining gap is **−2.8 points a
 year** — the smallest the project has measured, and still a gap.
 
-**Drawdown control.** Maximum drawdown of 11.3% against the index's 24.5% over the same window.
+**Drawdown control.** Maximum drawdown of 9.0% against the index's 24.5% over the same window.
 In 2022 the system returned +1.0% with a 3.4% intra-year drawdown while the index fell about
 18%. Be precise about why: the long-term trend filter kept it roughly 13% invested for most of
 that year, and much of the +1.0% is Treasury-bill yield. The claim is "the trend filter sat out
