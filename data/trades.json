@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-09-25",
+  "symbol": "USO",
+  "action": "add",
+  "side": "buy",
+  "qty": 3.0,
+  "price": 150.42,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.210000038146973,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-25",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 704.0,
+  "price": 28.62,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.210000038146973,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-24",
   "symbol": "GLD",
   "action": "exit",
