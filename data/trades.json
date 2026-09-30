@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-09-29",
+  "symbol": "META",
+  "action": "open",
+  "side": "buy",
+  "qty": 34.0,
+  "price": 722.7,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.970000267028809,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-29",
+  "symbol": "USO",
+  "action": "add",
+  "side": "buy",
+  "qty": 12.0,
+  "price": 146.33,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.970000267028809,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-25",
   "symbol": "USO",
   "action": "add",
