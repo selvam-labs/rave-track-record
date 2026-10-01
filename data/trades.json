@@ -1,5 +1,65 @@
 [
  {
+  "date": "2026-09-30",
+  "symbol": "AAPL",
+  "action": "add",
+  "side": "buy",
+  "qty": 65.0,
+  "price": 337.16,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.770000457763672,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-30",
+  "symbol": "CPER",
+  "action": "open",
+  "side": "buy",
+  "qty": 507.0,
+  "price": 39.85,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.770000457763672,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-30",
+  "symbol": "USO",
+  "action": "add",
+  "side": "buy",
+  "qty": 5.0,
+  "price": 145.89,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.770000457763672,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-30",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 700.0,
+  "price": 28.72,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.770000457763672,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-09-30",
+  "symbol": "SPY",
+  "action": "add",
+  "side": "buy",
+  "qty": 1.0,
+  "price": 768.62,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.770000457763672,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-09-29",
   "symbol": "META",
   "action": "open",
