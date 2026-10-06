@@ -1,5 +1,53 @@
 [
  {
+  "date": "2026-10-02",
+  "symbol": "META",
+  "action": "add",
+  "side": "buy",
+  "qty": 34.0,
+  "price": 733.11,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.680000305175781,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-02",
+  "symbol": "CPER",
+  "action": "add",
+  "side": "buy",
+  "qty": 509.0,
+  "price": 39.62,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.680000305175781,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-02",
+  "symbol": "USO",
+  "action": "add",
+  "side": "buy",
+  "qty": 9.0,
+  "price": 144.04,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.680000305175781,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-02",
+  "symbol": "XLV",
+  "action": "add",
+  "side": "buy",
+  "qty": 5.0,
+  "price": 166.16,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.680000305175781,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-10-01",
   "symbol": "META",
   "action": "add",
