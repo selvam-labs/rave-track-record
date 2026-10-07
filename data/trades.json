@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-10-06",
+  "symbol": "AAPL",
+  "action": "add",
+  "side": "buy",
+  "qty": 1.0,
+  "price": 331.86,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.399999618530273,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-10-02",
   "symbol": "META",
   "action": "add",
