@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-10-08",
+  "symbol": "META",
+  "action": "add",
+  "side": "buy",
+  "qty": 35.0,
+  "price": 720.11,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.510000228881836,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-08",
+  "symbol": "EWJ",
+  "action": "open",
+  "side": "buy",
+  "qty": 209.0,
+  "price": 97.48,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.510000228881836,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-10-06",
   "symbol": "AAPL",
   "action": "add",
