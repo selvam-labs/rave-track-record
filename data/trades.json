@@ -1,5 +1,41 @@
 [
  {
+  "date": "2026-10-09",
+  "symbol": "META",
+  "action": "add",
+  "side": "buy",
+  "qty": 2.0,
+  "price": 718.95,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.170000076293945,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-09",
+  "symbol": "EWJ",
+  "action": "add",
+  "side": "buy",
+  "qty": 208.0,
+  "price": 97.54,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.170000076293945,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-09",
+  "symbol": "XLK",
+  "action": "open",
+  "side": "buy",
+  "qty": 103.0,
+  "price": 197.73,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.170000076293945,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-10-08",
   "symbol": "META",
   "action": "add",
