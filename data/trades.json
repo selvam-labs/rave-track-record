@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-10-13",
+  "symbol": "NVDA",
+  "action": "trim",
+  "side": "sell",
+  "qty": 111.0,
+  "price": 225.85,
+  "realized_pnl": 1082.86,
+  "rule": "structural trim",
+  "vix": 15.180000305175781,
+  "tier": null
+ },
+ {
+  "date": "2026-10-13",
+  "symbol": "XLK",
+  "action": "add",
+  "side": "buy",
+  "qty": 1.0,
+  "price": 196.02,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.180000305175781,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-10-09",
   "symbol": "META",
   "action": "add",
