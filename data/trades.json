@@ -1,5 +1,41 @@
 [
  {
+  "date": "2026-10-14",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 1.0,
+  "price": 29.23,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.579999923706055,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-14",
+  "symbol": "EWJ",
+  "action": "add",
+  "side": "buy",
+  "qty": 47.0,
+  "price": 96.25,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.579999923706055,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-14",
+  "symbol": "XLK",
+  "action": "add",
+  "side": "buy",
+  "qty": 106.0,
+  "price": 193.75,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 15.579999923706055,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-10-13",
   "symbol": "NVDA",
   "action": "trim",
