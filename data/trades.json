@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-10-19",
+  "symbol": "NVDA",
+  "action": "exit",
+  "side": "sell",
+  "qty": 343.0,
+  "price": 215.46,
+  "realized_pnl": -217.64,
+  "rule": "trend exit",
+  "vix": 17.920000076293945,
+  "tier": null
+ },
+ {
+  "date": "2026-10-19",
+  "symbol": "META",
+  "action": "trim",
+  "side": "sell",
+  "qty": 29.0,
+  "price": 696.58,
+  "realized_pnl": -844.97,
+  "rule": "structural trim",
+  "vix": 17.920000076293945,
+  "tier": null
+ },
+ {
   "date": "2026-10-14",
   "symbol": "UUP",
   "action": "add",
