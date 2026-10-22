@@ -105,21 +105,63 @@ function renderCharts(nav, startingCash) {
         yaxis: { ...PLOT_LAYOUT.yaxis, ticksuffix: "%", rangemode: "tozero" } }, PLOT_CONFIG);
 }
 
+/* Trade log: newest first, PAGE_SIZE rows per page, scrolling inside a fixed-height
+   box with a sticky header. The pager is created here, not in index_template.html,
+   so this ships without touching the engine's publisher. */
+const PAGE_SIZE = 25;
+
+function tradeRow(t) {
+  return `<tr>
+      <td>${t.date}</td><td>${t.symbol}</td><td>${t.action}</td><td>${t.side}</td>
+      <td class="num">${t.qty}</td><td class="num">$${t.price.toFixed(2)}</td>
+      <td class="num ${cls(t.realized_pnl)}">${t.realized_pnl ? fmtUsd(t.realized_pnl) : "—"}</td>
+      <td>${t.rule}</td><td class="num">${t.vix == null ? "—" : Number(t.vix).toFixed(1)}</td>
+    </tr>`;
+}
+
 function renderTrades(trades) {
   const tbody = $("#trades tbody");
   if (!trades.length) {
     tbody.innerHTML = `<tr><td colspan="9" class="empty">No fills yet — the engine is waiting for its first signal.</td></tr>`;
     return;
   }
-  $("#tradecount").textContent = `(latest ${trades.length})`;
-  tbody.innerHTML = trades
-    .map((t) => `<tr>
-      <td>${t.date}</td><td>${t.symbol}</td><td>${t.action}</td><td>${t.side}</td>
-      <td class="num">${t.qty}</td><td class="num">$${t.price.toFixed(2)}</td>
-      <td class="num ${cls(t.realized_pnl)}">${t.realized_pnl ? fmtUsd(t.realized_pnl) : "—"}</td>
-      <td>${t.rule}</td><td class="num">${t.vix == null ? "—" : Number(t.vix).toFixed(1)}</td>
-    </tr>`)
-    .join("");
+  $("#tradecount").textContent = `(${trades.length} fills, newest first)`;
+
+  const wrap = $("#trades").closest(".table-wrap");
+  wrap.classList.add("scroll");
+  let pager = $("#pager");
+  if (!pager) {
+    pager = document.createElement("nav");
+    pager.id = "pager";
+    pager.className = "pager";
+    pager.setAttribute("aria-label", "Trade log pages");
+    wrap.after(pager);
+  }
+
+  const pages = Math.ceil(trades.length / PAGE_SIZE);
+  let page = 0;
+
+  function show(p) {
+    page = Math.max(0, Math.min(pages - 1, p));
+    const from = page * PAGE_SIZE;
+    const to = Math.min(from + PAGE_SIZE, trades.length);
+    tbody.innerHTML = trades.slice(from, to).map(tradeRow).join("");
+    wrap.scrollTop = 0;
+    if (pages <= 1) { pager.hidden = true; return; }
+    pager.innerHTML = `
+      <button type="button" data-go="first" ${page === 0 ? "disabled" : ""} aria-label="First page">«</button>
+      <button type="button" data-go="prev" ${page === 0 ? "disabled" : ""}>‹ Newer</button>
+      <span class="muted">${from + 1}–${to} of ${trades.length} · page ${page + 1}/${pages}</span>
+      <button type="button" data-go="next" ${page === pages - 1 ? "disabled" : ""}>Older ›</button>
+      <button type="button" data-go="last" ${page === pages - 1 ? "disabled" : ""} aria-label="Last page">»</button>`;
+  }
+
+  pager.onclick = (e) => {
+    const go = e.target.closest("button")?.dataset.go;
+    if (!go) return;
+    show({ first: 0, prev: page - 1, next: page + 1, last: pages - 1 }[go]);
+  };
+  show(0);
 }
 
 async function main() {
