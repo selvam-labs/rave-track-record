@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-10-21",
+  "symbol": "META",
+  "action": "add",
+  "side": "buy",
+  "qty": 35.0,
+  "price": 709.49,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.079999923706055,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-21",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 8.0,
+  "price": 28.93,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.079999923706055,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-10-20",
   "symbol": "META",
   "action": "trim",
