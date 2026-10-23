@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-10-22",
+  "symbol": "CPER",
+  "action": "exit",
+  "side": "sell",
+  "qty": 1016.0,
+  "price": 38.72,
+  "realized_pnl": -1031.01,
+  "rule": "trend exit",
+  "vix": 18.0,
+  "tier": null
+ },
+ {
   "date": "2026-10-21",
   "symbol": "META",
   "action": "add",
