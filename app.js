@@ -82,7 +82,11 @@ function renderTiles(s) {
     .join("");
 }
 
-function renderCharts(nav, startingCash) {
+/* RAVE 2.0 = the rebuilt rule set that went live on this date (CHANGELOG: v0.7). */
+const CUTOVER = "2026-08-17";
+const pctText = (x) => (x >= 0 ? "+" : "−") + Math.abs(x * 100).toFixed(1) + "%";
+
+function renderCharts(nav, startingCash, spy) {
   const dates = nav.map((r) => r.date);
   const navs = nav.map((r) => r.nav);
   // A 0–1 point curve renders as an awkward dot; anchor with the starting cash.
@@ -90,6 +94,68 @@ function renderCharts(nav, startingCash) {
     dates.unshift("start");
     navs.unshift(startingCash);
   }
+  // SPY marked at the same 10AM moment as each NAV point, scaled to RAVE's day-1 NAV:
+  // "the same money, just held in SPY". Joined by session so the x-points line up.
+  const spyBySession = new Map((spy || []).map((r) => [r.session, r.price]));
+  const spyPts = nav.map((r) => spyBySession.get(r.session));
+  const withSpy = nav.length > 1 && spyPts[0] != null && spyPts[spyPts.length - 1] != null;
+
+  if (!withSpy) {                       // no benchmark yet: the original single-line view
+    renderRaveOnly(nav, dates, navs);
+    return;
+  }
+
+  const start = navs[0];
+  const spyNav = spyPts.map((p) => (p == null ? null : start * p / spyPts[0]));
+  const last = dates[dates.length - 1];
+  const c = dates.findIndex((d) => d >= CUTOVER);
+  const cIdx = spyPts.findIndex((p, i) => i >= c && p != null);
+  const sinceRave = navs[navs.length - 1] / navs[cIdx] - 1;
+  const sinceSpy = spyPts[spyPts.length - 1] / spyPts[cIdx] - 1;
+
+  // RAVE 2.0 era: a bright band + label, so the eye lands on the current rule set.
+  const shapes = [
+    { type: "rect", xref: "x", yref: "paper", x0: CUTOVER, x1: last, y0: 0, y1: 1,
+      fillcolor: "rgba(88,166,255,.10)", line: { width: 0 }, layer: "below" },
+    { type: "line", xref: "x", yref: "paper", x0: CUTOVER, x1: CUTOVER, y0: 0, y1: 1,
+      line: { color: "#58a6ff", width: 2 } },
+  ];
+  const annotations = [
+    { x: CUTOVER, yref: "paper", y: 0.98, xanchor: "left", yanchor: "top", xshift: 6,
+      text: "<b>RAVE 2.0 live (Aug 17) →</b>", showarrow: false,
+      font: { color: "#58a6ff", size: 13 } },
+    { x: CUTOVER, yref: "paper", y: 0.86, xanchor: "left", yanchor: "top", xshift: 6,
+      showarrow: false, align: "left", font: { size: 13, color: "#c9d1d9" },
+      bgcolor: "rgba(13,17,23,.9)", bordercolor: "#58a6ff", borderwidth: 1, borderpad: 5,
+      text: `Since 2.0: <b style="color:${sinceRave >= 0 ? "#3fb950" : "#f85149"}">RAVE ${pctText(sinceRave)}</b>` +
+            `  vs  <b>SPY ${pctText(sinceSpy)}</b>` },
+  ];
+
+  Plotly.newPlot("equity", [
+    { x: dates, y: spyNav, name: "SPY (same $1M start)", mode: "lines", connectgaps: true,
+      line: { color: "#8b949e", width: 1.5, dash: "dash" },
+      hovertemplate: "%{x}<br>SPY $%{y:,.0f}<extra></extra>" },
+    { x: dates, y: navs, name: "RAVE", mode: "lines+markers",
+      line: { color: "#3fb950", width: 2.5 }, marker: { size: 4 },
+      hovertemplate: "%{x}<br>RAVE $%{y:,.0f}<extra></extra>" },
+  ], { ...PLOT_LAYOUT, showlegend: true,
+       legend: { orientation: "h", x: 0, y: 1.14, font: { color: "#c9d1d9", size: 12 } },
+       margin: { ...PLOT_LAYOUT.margin, t: 40 }, shapes, annotations,
+       yaxis: { ...PLOT_LAYOUT.yaxis, tickprefix: "$", tickformat: ",.0f" } }, PLOT_CONFIG);
+
+  // The drawdown chart is replaced by one plain-English line (most readers skip a
+  // drawdown chart; the comparison is the point).
+  let pk = -Infinity, spyWorst = 0;
+  spyPts.forEach((p) => { if (p != null) { pk = Math.max(pk, p); spyWorst = Math.min(spyWorst, p / pk - 1); } });
+  const raveWorst = -Math.max(...nav.map((r) => r.drawdown_pct));
+  const dd = $("#drawdown");
+  dd.className = "dd-line";
+  dd.innerHTML = `Biggest drop from a high so far: ` +
+    `<b class="${raveWorst >= spyWorst ? "pos" : "neg"}">RAVE ${(raveWorst * 100).toFixed(1)}%</b>` +
+    ` vs <b>SPY ${(spyWorst * 100).toFixed(1)}%</b>`;
+}
+
+function renderRaveOnly(nav, dates, navs) {
   Plotly.newPlot("equity", [{
     x: dates, y: navs, mode: "lines+markers",
     line: { color: "#3fb950", width: 2 }, marker: { size: 4 },
@@ -168,10 +234,13 @@ async function main() {
   // Baked at commit time — works even if the JSON fetch below fails.
   renderFreshness($("#fresh")?.dataset.asof);
   try {
-    const [summary, nav, trades] = await Promise.all([load("summary"), load("nav"), load("trades")]);
+    const [summary, nav, trades, spy] = await Promise.all([
+      load("summary"), load("nav"), load("trades"),
+      load("spy").catch(() => []),        // optional: benchmark appears once the engine publishes it
+    ]);
     renderHeadline(summary);
     renderTiles(summary);
-    renderCharts(nav, summary.starting_cash);
+    renderCharts(nav, summary.starting_cash, spy);
     renderTrades(trades);
     renderFreshness(summary.as_of);
     $("#asof").textContent = `data as of ${summary.as_of} (UTC)`;
