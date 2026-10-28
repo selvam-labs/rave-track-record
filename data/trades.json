@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-10-27",
+  "symbol": "SPY",
+  "action": "add",
+  "side": "buy",
+  "qty": 26.0,
+  "price": 765.7,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.75,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-27",
+  "symbol": "IEF",
+  "action": "exit",
+  "side": "buy",
+  "qty": 111.0,
+  "price": 91.01,
+  "realized_pnl": 7.77,
+  "rule": "vol-regime cap",
+  "vix": 17.75,
+  "tier": null
+ },
+ {
   "date": "2026-10-23",
   "symbol": "META",
   "action": "exit",
