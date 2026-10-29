@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-10-28",
+  "symbol": "MSFT",
+  "action": "add",
+  "side": "buy",
+  "qty": 48.0,
+  "price": 529.79,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.520000457763672,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-28",
+  "symbol": "XLV",
+  "action": "add",
+  "side": "buy",
+  "qty": 113.0,
+  "price": 179.99,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 17.520000457763672,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-10-27",
   "symbol": "SPY",
   "action": "add",
