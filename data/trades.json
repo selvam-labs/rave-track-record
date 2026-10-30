@@ -1,5 +1,53 @@
 [
  {
+  "date": "2026-10-29",
+  "symbol": "AAPL",
+  "action": "add",
+  "side": "buy",
+  "qty": 73.0,
+  "price": 349.59,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.969999313354492,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-29",
+  "symbol": "MSFT",
+  "action": "add",
+  "side": "buy",
+  "qty": 47.0,
+  "price": 527.68,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.969999313354492,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-29",
+  "symbol": "BNO",
+  "action": "add",
+  "side": "buy",
+  "qty": 293.0,
+  "price": 69.91,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.969999313354492,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-10-29",
+  "symbol": "UUP",
+  "action": "add",
+  "side": "buy",
+  "qty": 702.0,
+  "price": 29.1,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 16.969999313354492,
+  "tier": "Risk-On"
+ },
+ {
   "date": "2026-10-28",
   "symbol": "MSFT",
   "action": "add",
