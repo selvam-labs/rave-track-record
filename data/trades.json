@@ -1,5 +1,77 @@
 [
  {
+  "date": "2026-11-02",
+  "symbol": "AAPL",
+  "action": "trim",
+  "side": "sell",
+  "qty": 71.0,
+  "price": 340.07,
+  "realized_pnl": 628.11,
+  "rule": "vol-regime cap",
+  "vix": 19.06999969482422,
+  "tier": null
+ },
+ {
+  "date": "2026-11-02",
+  "symbol": "MSFT",
+  "action": "trim",
+  "side": "sell",
+  "qty": 97.0,
+  "price": 524.76,
+  "realized_pnl": 1828.43,
+  "rule": "vol-regime cap",
+  "vix": 19.06999969482422,
+  "tier": null
+ },
+ {
+  "date": "2026-11-02",
+  "symbol": "BNO",
+  "action": "trim",
+  "side": "sell",
+  "qty": 268.0,
+  "price": 67.19,
+  "realized_pnl": 1606.59,
+  "rule": "vol-regime cap",
+  "vix": 19.06999969482422,
+  "tier": null
+ },
+ {
+  "date": "2026-11-02",
+  "symbol": "USO",
+  "action": "add",
+  "side": "buy",
+  "qty": 10.0,
+  "price": 158.78,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 19.06999969482422,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-11-02",
+  "symbol": "UUP",
+  "action": "trim",
+  "side": "sell",
+  "qty": 711.0,
+  "price": 28.92,
+  "realized_pnl": 127.82,
+  "rule": "vol-regime cap",
+  "vix": 19.06999969482422,
+  "tier": null
+ },
+ {
+  "date": "2026-11-02",
+  "symbol": "XLV",
+  "action": "trim",
+  "side": "sell",
+  "qty": 120.0,
+  "price": 184.11,
+  "realized_pnl": 1442.79,
+  "rule": "vol-regime cap",
+  "vix": 19.06999969482422,
+  "tier": null
+ },
+ {
   "date": "2026-10-29",
   "symbol": "AAPL",
   "action": "add",
