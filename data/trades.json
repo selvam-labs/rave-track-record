@@ -1,5 +1,53 @@
 [
  {
+  "date": "2026-11-05",
+  "symbol": "GLD",
+  "action": "open",
+  "side": "sell",
+  "qty": 53.0,
+  "price": 376.5,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 19.059999465942383,
+  "tier": "Risk-On"
+ },
+ {
+  "date": "2026-11-05",
+  "symbol": "BNO",
+  "action": "exit",
+  "side": "sell",
+  "qty": 461.0,
+  "price": 61.57,
+  "realized_pnl": 172.75,
+  "rule": "trend exit",
+  "vix": 19.059999465942383,
+  "tier": null
+ },
+ {
+  "date": "2026-11-05",
+  "symbol": "USO",
+  "action": "exit",
+  "side": "sell",
+  "qty": 257.0,
+  "price": 147.31,
+  "realized_pnl": -680.34,
+  "rule": "trend exit",
+  "vix": 19.059999465942383,
+  "tier": null
+ },
+ {
+  "date": "2026-11-05",
+  "symbol": "UUP",
+  "action": "trim",
+  "side": "sell",
+  "qty": 705.0,
+  "price": 28.93,
+  "realized_pnl": 98.54,
+  "rule": "vol-regime cap",
+  "vix": 19.059999465942383,
+  "tier": null
+ },
+ {
   "date": "2026-11-04",
   "symbol": "UUP",
   "action": "add",
