@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-11-09",
+  "symbol": "MSFT",
+  "action": "add",
+  "side": "buy",
+  "qty": 19.0,
+  "price": 540.11,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 21.790000915527344,
+  "tier": "Elevated"
+ },
+ {
+  "date": "2026-11-09",
+  "symbol": "SLV",
+  "action": "open",
+  "side": "sell",
+  "qty": 213.0,
+  "price": 47.5,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 21.790000915527344,
+  "tier": "Elevated"
+ },
+ {
   "date": "2026-11-05",
   "symbol": "GLD",
   "action": "open",
