@@ -1,5 +1,17 @@
 [
  {
+  "date": "2026-11-10",
+  "symbol": "TSLA",
+  "action": "open",
+  "side": "sell",
+  "qty": 53.0,
+  "price": 377.29,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 20.610000610351562,
+  "tier": "Elevated"
+ },
+ {
   "date": "2026-11-09",
   "symbol": "MSFT",
   "action": "add",
