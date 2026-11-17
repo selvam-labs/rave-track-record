@@ -1,5 +1,29 @@
 [
  {
+  "date": "2026-11-16",
+  "symbol": "GOOGL",
+  "action": "open",
+  "side": "sell",
+  "qty": 70.0,
+  "price": 287.64,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 20.450000762939453,
+  "tier": "Elevated"
+ },
+ {
+  "date": "2026-11-16",
+  "symbol": "AMZN",
+  "action": "open",
+  "side": "buy",
+  "qty": 48.0,
+  "price": 261.27,
+  "realized_pnl": 0.0,
+  "rule": "tranche build",
+  "vix": 20.450000762939453,
+  "tier": "Elevated"
+ },
+ {
   "date": "2026-11-13",
   "symbol": "TSLA",
   "action": "exit",
